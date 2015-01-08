@@ -1,0 +1,47 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+	<meta charset="utf-8" /> 
+	<title>gyro.js - easy access to your web browsers built in accelerometer's and gyroscope's</title>
+<style type="text/css">
+#apDiv1 {
+	position: absolute;
+	width: 200px;
+	height: 115px;
+	z-index: 2;
+	left: 326px;
+	top: 73px;
+}
+#apDiv2 {
+	position: absolute;
+	width: 200px;
+	height: 115px;
+	z-index: 1;
+	left: 318px;
+	top: 78px;
+}
+</style>
+</head>
+<body>
+	<p>This Example just print's the raw accelerometer and gyro data. Will return null if no device information is found.</p>
+	<p>gyro.getFeatures: <span id="features"></span></p>
+	<span id="example"></span>
+<div id="aaa" style="position:absolute; font-size:72px">AAA
+  <div id="apDiv2"><img src="包浩斯嘴.png" width="300" height="303"></div>
+</div>
+<script src="../js/gyro.js"></script>
+	<div id="apDiv1"><img src="包浩斯臉.png" width="300" height="257"></div>
+	<script>
+		var a = document.getElementById('aaa');
+		var b= document.getElementById('apDiv2');
+		
+		
+		b.style.top = screen.height / 2 +"px";
+		gyro.startTracking(function(o) {
+			
+			b.style.top = a.offsetTop - o.y*15 +"px";
+			if (b.offsetLeft <= 0){alert("啊");};
+		});
+	</script>
+</body>
+</html>
