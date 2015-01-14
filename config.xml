@@ -3,10 +3,10 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.MyNtutNewApp_102AC2023lisa810351"
-        version   = "1.0.0">
+        id        = "com.phonegap.GYRO_lisa810351"
+        version   = "3.6.3">
 
-    <name>Magic Ball</name>
+    <name>BAUHAUS</name>
 
     <description>
         Hello World sample application that responds to the deviceready event.
