@@ -1,0 +1,70 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+	<meta charset="utf-8" /> 
+	<title>gyro.js - easy access to your web browsers built in accelerometer's and gyroscope's</title>
+<style type="text/css">
+
+}
+</style>
+</head>
+<body>
+	<!--
+	<p>This Example just print's the raw accelerometer and gyro data. Will return null if no device information is found.</p>
+	<p>gyro.getFeatures: 
+	<span id="features"></span></p>
+	<span id="example"></span>
+    
+    <div id="aaa"><font size="+6">AAA</font></div>
+    -->
+    
+    <img  id="apDiv1" src="m02.png" width="300" height="303">
+	<img id="apDiv2" src="m01.png" width="300" height="257">
+    
+	<script src="js/gyro.js"></script>
+	
+	<script>
+
+	    //var b = document.getElementById('example');
+		//var f = document.getElementById('features');
+		var a1 = document.getElementById('apDiv1');
+		var a2 = document.getElementById('apDiv2');
+
+		var f1 = 0.0;
+
+
+        var elementStyle1 = document.getElementById("apDiv1").style;
+        elementStyle1.position = "absolute";
+        elementStyle1.top = "0px";
+        elementStyle1.left = "0px";
+        elementStyle1.zIndex = "1";
+
+        var elementStyle2 = document.getElementById("apDiv2").style;
+        elementStyle2.position = "absolute";
+        elementStyle2.top = "0px";
+        elementStyle2.left = "0px";
+        elementStyle2.zIndex = "0";
+
+
+		gyro.startTracking(function(o) {
+			
+			/*
+			f.innerHTML = gyro.getFeatures();
+			b.innerHTML = "<p> x = " + o.x + "</p>" +
+						  "<p> y = " + o.y + "</p>" +
+										"<p> z = " + o.z + "</p>" +
+										"<p> alpha = " + o.alpha + "</p>" +
+										"<p> beta = " + o.beta + "</p>" +
+										"<p> gamma = " + o.gamma + "</p>";
+										*/
+			f1 = f1 + (o.y*20-f1)/12;
+			elementStyle2.top = (f1+150)+"px";
+
+			//elementStyle2.top = (o.y*30+150)+"px";
+
+		});
+	</script>
+
+	
+</body>
+</html>
